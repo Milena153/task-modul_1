@@ -123,3 +123,71 @@
 
 //Задание 13
 //Функция преобразования температуры, Напишите функцию convertTemperature(c). НЕ ПОНЯЛА КАК ЭТО ДЕЛАТЬ
+
+//ЗАДАЧИ ПОВЫШЕННОЙ СЛОЖНОСТИ
+
+//задание 1
+// while (true){
+//     let age = prompt('введите ваш возраст: ');
+//     break
+// };
+// function checkName() {
+//     const name = prompt('введите ваше имя');
+
+// };
+// function checkAge(age){
+//     if (age < 18){
+//         return 'вы не совершеноетний';
+//     } else{
+//         return 'вы совершеноетний';
+//     }
+// };
+// alert(name,age)
+
+//задание 2
+function checkAge(age) {
+    if (age < 18) {
+        return "Вы еще не совершеннолетний";
+    } else {
+        return "Вы совершеннолетний";
+    }
+}
+
+function checkSex(sex) {
+    if (sex === "мужской") {
+        return "Вы мужчина";
+    } else if (sex === "женский") {
+        return "Вы женщина";
+    } else {
+        return "Пол не указан";
+    }
+}
+
+function checkMaritalStatus(status) {
+    if (status === "женат" || status === "замужем") {
+        return "Вы женаты/замужем";
+    } else if (status === "не женат" || status === "не замужем") {
+        return "Вы не женаты/не замужем";
+    } else {
+        return "Семейное положение не указано";
+    }
+}
+
+let name = prompt("Введите ваше имя:");
+let age;
+while (true) {
+    age = parseInt(prompt("Введите ваш возраст:"));
+    if (!isNaN(age) && age >= 0) {
+        break;
+    }
+    alert("Введите корректный возраст");
+}
+
+let sex = prompt("Введите ваш пол (мужской/женский):");
+let maritalStatus = prompt("Введите ваше семейное положение (женат/замужем/не женат/не замужем):");
+
+let ageMessage = checkAge(age);
+let sexMessage = checkSex(sex);
+let maritalMessage = checkMaritalStatus(maritalStatus);
+
+alert(`Привет, ${name}!\n${ageMessage}\n${sexMessage}\n${maritalMessage}`);
